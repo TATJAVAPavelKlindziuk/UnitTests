@@ -1,0 +1,12 @@
+<suite name="Calculator Suite" parallel="methods" thread-count="8" >
+        <test name="Full suit">
+            <packages>
+                <package name="com.epam.module4.test.*"/>
+            </packages>
+            <groups>
+                <run>
+                    <include name = "Full" /> <!-- Full, Arithmetic, Trigonometry, Special -->
+                </run>
+            </groups>
+        </test>
+    </suite>
