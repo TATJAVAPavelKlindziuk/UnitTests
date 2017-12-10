@@ -1,7 +1,7 @@
 package com.epam.module4.test.mult;
 
 import com.epam.module4.common.TestGroups;
-import com.epam.module4.common.dataprovider.DataProviderManager;
+import com.epam.module4.common.DataProviderManager;
 import com.epam.module4.common.NumberCheckerUtil;
 import com.epam.module4.test.BaseTest;
 import org.testng.Assert;
@@ -17,6 +17,7 @@ public class MultLongTest extends BaseTest {
     public void checkLongMult(Object... data) {
         long[] correctData = NumberCheckerUtil.checkLongNumber(data);
         long actual = calculator.mult(correctData[0], correctData[1]);
-        Assert.assertEquals(actual, correctData[2]);
+        Assert.assertEquals(actual, correctData[2],
+                String.format("Incorrect result : expected %d, but found %d .",correctData[2],actual));
     }
 }

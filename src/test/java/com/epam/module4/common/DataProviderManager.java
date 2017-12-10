@@ -1,4 +1,4 @@
-package com.epam.module4.common.dataprovider;
+package com.epam.module4.common;
 
 import org.testng.annotations.DataProvider;
 
@@ -70,7 +70,7 @@ public class DataProviderManager {
         return new Object[][]{{20L, "2", 10L},
                 {"30", "6", "5"},
                 {"4", "4", "1"},
-                {"-10", -1L, "-10"},
+                {"-10", -1L, "10"},
                 {Long.MAX_VALUE, Long.MAX_VALUE, "1" }};
     }
 

@@ -1,7 +1,7 @@
 package com.epam.module4.test.functions;
 
 import com.epam.module4.common.TestGroups;
-import com.epam.module4.common.dataprovider.DataProviderManager;
+import com.epam.module4.common.DataProviderManager;
 import com.epam.module4.common.NumberCheckerUtil;
 import com.epam.module4.test.BaseTest;
 import org.testng.Assert;
@@ -16,7 +16,8 @@ public class TgTest extends BaseTest {
     public void checkTg(Object... data) {
         double[] correctData = NumberCheckerUtil.checkDoubleNumber(data);
         double actual = calculator.tg(correctData[0]);
-        Assert.assertEquals(actual, correctData[1]);
+        Assert.assertEquals(actual, correctData[1],
+                String.format("Incorrect result : expected %f, but found %f .",correctData[1],actual));
     }
 
     @Test(groups = { TestGroups.FULL, TestGroups.TRIGONOMETRY },
@@ -25,6 +26,5 @@ public class TgTest extends BaseTest {
     public void checkExc(Object... data) {
         double[] correctData = NumberCheckerUtil.checkDoubleNumber(data);
         double actual = calculator.tg(correctData[0]);
-        Assert.assertEquals(actual, correctData[1]);
     }
 }
